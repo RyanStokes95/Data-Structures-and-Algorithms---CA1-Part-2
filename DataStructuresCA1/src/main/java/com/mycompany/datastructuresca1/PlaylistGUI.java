@@ -16,6 +16,8 @@ public class PlaylistGUI extends javax.swing.JFrame {
     public PlaylistGUI() {
         initComponents();
     }
+    
+    LikedSongs ls = new LikedSongs();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,21 +28,101 @@ public class PlaylistGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroupGenre = new javax.swing.ButtonGroup();
+        txtSongName = new javax.swing.JTextField();
+        rdoRock = new javax.swing.JRadioButton();
+        rdoElectronic = new javax.swing.JRadioButton();
+        lblSongName = new javax.swing.JLabel();
+        btnAddSong = new javax.swing.JButton();
+        btnToPLaylist = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        txtSongName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSongNameActionPerformed(evt);
+            }
+        });
+
+        buttonGroupGenre.add(rdoRock);
+        rdoRock.setText("Rock");
+
+        buttonGroupGenre.add(rdoElectronic);
+        rdoElectronic.setText("Electronic");
+
+        lblSongName.setText("Song Name:");
+
+        btnAddSong.setText("Add Song");
+        btnAddSong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddSongActionPerformed(evt);
+            }
+        });
+
+        btnToPLaylist.setText("Playlists");
+        btnToPLaylist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnToPLaylistActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(rdoElectronic)
+                        .addGap(18, 18, 18)
+                        .addComponent(rdoRock)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnToPLaylist))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblSongName)
+                                .addGap(93, 93, 93)
+                                .addComponent(txtSongName, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                                .addComponent(btnAddSong)))
+                        .addGap(47, 47, 47))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSongName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSongName)
+                    .addComponent(btnAddSong))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rdoElectronic)
+                    .addComponent(rdoRock))
+                .addGap(128, 128, 128)
+                .addComponent(btnToPLaylist)
+                .addGap(40, 40, 40))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnToPLaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToPLaylistActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnToPLaylistActionPerformed
+
+    private void txtSongNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSongNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSongNameActionPerformed
+
+    private void btnAddSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSongActionPerformed
+        ls.AddLikedSong(txtSongName.getText());
+        System.out.println(ls.songs);
+    }//GEN-LAST:event_btnAddSongActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +160,12 @@ public class PlaylistGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddSong;
+    private javax.swing.JButton btnToPLaylist;
+    private javax.swing.ButtonGroup buttonGroupGenre;
+    private javax.swing.JLabel lblSongName;
+    private javax.swing.JRadioButton rdoElectronic;
+    private javax.swing.JRadioButton rdoRock;
+    private javax.swing.JTextField txtSongName;
     // End of variables declaration//GEN-END:variables
 }
