@@ -10,12 +10,12 @@ import java.util.*;
 
 public class SongSort{
     
-    private Stack<String> songs;
-    private String song;
-    private String artist;
+    private final Stack<String> songs;
+    private final String song;
+    private final String artist;
     private String title;
-    private ArrayList<String> genreA;
-    private ArrayList<String> genreB;
+    private final LinkedList<String> genreA;
+    private final LinkedList<String> genreB;
     
     public SongSort(){
         
@@ -23,8 +23,8 @@ public class SongSort{
         artist = "";
         song = "";
         title = "";
-        genreA = new ArrayList<>();
-        genreB = new ArrayList<>();
+        genreA = new LinkedList<>();
+        genreB = new LinkedList<>();
     }
     
     public void addLikedSong(String song, String artist){
@@ -42,7 +42,7 @@ public class SongSort{
     
     public void addGenreA(){
         
-        genreA.add(songs.peek());
+        genreA.add( songs.peek());
         songs.pop();
         
     }
@@ -53,9 +53,14 @@ public class SongSort{
         
     }
     
+    public boolean containsA(String song){
+        
+        return genreA.contains(song);
+    }
+    
     public void addGenreB(){
         
-        genreB.add(songs.peek());
+        genreB.add( songs.peek());
         songs.pop();
         
     }
@@ -64,5 +69,10 @@ public class SongSort{
         
         return genreB.getLast();
         
+    }
+    
+    public boolean containsB(String song){
+        
+        return genreB.contains(song);
     }
 }

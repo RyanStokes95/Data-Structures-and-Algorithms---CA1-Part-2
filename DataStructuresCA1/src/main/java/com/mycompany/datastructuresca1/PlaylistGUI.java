@@ -1,29 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.datastructuresca1;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * 13/03/24
+ * PlayListGUI.java
  * @author Ryan Stokes
  */
 public class PlaylistGUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PlaylistGUI
-     */
     public PlaylistGUI() {
         initComponents();
     }
     
+    //Data Memebers
     SongSort ls = new SongSort();
     DefaultListModel lmLikedSongs = new DefaultListModel();
     DefaultListModel lmRock = new DefaultListModel();
     DefaultListModel lmElectronic = new DefaultListModel();
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,14 +40,16 @@ public class PlaylistGUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         lstLikedSongs = new javax.swing.JList<>();
         lblLikedSongs = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        lstRock = new javax.swing.JList<>();
         jScrollPane3 = new javax.swing.JScrollPane();
-        lstElectronic = new javax.swing.JList<>();
-        lblRockList = new javax.swing.JLabel();
-        lblElectronicList = new javax.swing.JLabel();
+        lstGenre = new javax.swing.JList<>();
+        lblGenreList = new javax.swing.JLabel();
         txtArtist = new javax.swing.JTextField();
         lblArtist = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        txtSearch = new javax.swing.JTextField();
+        lblSearch = new javax.swing.JLabel();
+        lblGenrePlaylist = new javax.swing.JLabel();
+        btnSearch = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,52 +85,64 @@ public class PlaylistGUI extends javax.swing.JFrame {
 
         lblLikedSongs.setText("Liked Songs:");
 
-        jScrollPane2.setViewportView(lstRock);
+        jScrollPane3.setViewportView(lstGenre);
 
-        jScrollPane3.setViewportView(lstElectronic);
-
-        lblRockList.setText("Rock");
-
-        lblElectronicList.setText("Electronic");
+        lblGenreList.setText("Rock");
 
         lblArtist.setText("Artist");
+
+        jButton1.setText("Next Genre");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        lblSearch.setText("Search Playlist");
+
+        lblGenrePlaylist.setText("Genre Playlists");
+
+        btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50))
+                        .addGap(444, 444, 444)
+                        .addComponent(lblGenreList))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblSongName)
                             .addComponent(lblLikedSongs)
-                            .addComponent(lblArtist))
+                            .addComponent(lblArtist)
+                            .addComponent(lblSearch)
+                            .addComponent(lblGenrePlaylist))
                         .addGap(93, 93, 93)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtSongName, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtArtist, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtSearch)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1)
+                            .addComponent(txtSongName)
+                            .addComponent(txtArtist))
                         .addGap(168, 168, 168)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(btnAddGenre)
-                                .addComponent(rdoElectronic, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(rdoElectronic, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButton1))
                             .addComponent(rdoRock)
-                            .addComponent(btnAddSong))
-                        .addGap(0, 177, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(lblRockList)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblElectronicList)
-                .addGap(224, 224, 224))
+                            .addComponent(btnAddSong)
+                            .addComponent(btnSearch))))
+                .addGap(0, 49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,27 +169,38 @@ public class PlaylistGUI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblLikedSongs))))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblElectronicList)
-                    .addComponent(lblRockList))
+                .addGap(36, 36, 36)
+                .addComponent(lblGenreList)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblSearch)
+                            .addComponent(btnSearch)))
+                    .addComponent(lblGenrePlaylist))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddGenreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddGenreActionPerformed
-        
+        //Sorts Songs into selected playlist depending on radio button choice
         if(rdoRock.isSelected()){
             
             ls.addGenreA();
             lmRock.add(0, ls.sortGenreA());
-            lstRock.setModel(lmRock);
+            //Sets the list model depending on which playlist is visible to the user
+            if(lblGenreList.getText() == "Rock"){
+                lstGenre.setModel(lmRock);
+            }
+            //Removes song from liked songs playlist when it has been deleted from the liked songs stack
             lmLikedSongs.removeElementAt(0);
             
         }
@@ -187,10 +208,15 @@ public class PlaylistGUI extends javax.swing.JFrame {
             
             ls.addGenreB();
             lmElectronic.add(0, ls.sortGenreB());
-            lstElectronic.setModel(lmElectronic);
+            //Sets the list model depending on which playlist is visible to the user
+            if(lblGenreList.getText() == "Electronic"){
+                lstGenre.setModel(lmElectronic);
+            }
+            //Removes song from liked songs playlist when it has been deleted from the liked songs stack
             lmLikedSongs.removeElementAt(0);
             
         }
+        //Pop up alert if no button is selected
         else{
             
             JOptionPane.showMessageDialog(null, "Please Select a Genre");
@@ -207,6 +233,53 @@ public class PlaylistGUI extends javax.swing.JFrame {
         lmLikedSongs.add(0, ls.sortLikedSongs());
         lstLikedSongs.setModel(lmLikedSongs);
     }//GEN-LAST:event_btnAddSongActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //Depending on which playlist is selected to be visible the list model is updated
+        if(lblGenreList.getText() == "Rock"){
+            
+            lblGenreList.setText("Electronic");
+            lstGenre.setModel(lmElectronic);
+            
+        }
+        else{
+         
+            lblGenreList.setText("Rock");
+            lstGenre.setModel(lmRock);
+            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        if(lblGenreList.getText() == "Rock"){
+            
+            if(ls.containsA(txtSearch.getText())){
+            
+                JOptionPane.showMessageDialog(null, "This song is in the Rock playlist");
+            
+        }
+            else{
+                
+                JOptionPane.showMessageDialog(null, "This song is not in the Rock playlist");
+                
+            }
+            
+        }
+        else{
+            
+            if(ls.containsB(txtSearch.getText())){
+            
+                JOptionPane.showMessageDialog(null, "This song is in the Electronic playlist");
+            
+        }
+            else{
+                
+                JOptionPane.showMessageDialog(null, "This song is not in the Electronic playlist");
+                
+            }
+            
+        }
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,21 +319,23 @@ public class PlaylistGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddGenre;
     private javax.swing.JButton btnAddSong;
+    private javax.swing.JButton btnSearch;
     private javax.swing.ButtonGroup buttonGroupGenre;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblArtist;
-    private javax.swing.JLabel lblElectronicList;
+    private javax.swing.JLabel lblGenreList;
+    private javax.swing.JLabel lblGenrePlaylist;
     private javax.swing.JLabel lblLikedSongs;
-    private javax.swing.JLabel lblRockList;
+    private javax.swing.JLabel lblSearch;
     private javax.swing.JLabel lblSongName;
-    private javax.swing.JList<String> lstElectronic;
+    private javax.swing.JList<String> lstGenre;
     private javax.swing.JList<String> lstLikedSongs;
-    private javax.swing.JList<String> lstRock;
     private javax.swing.JRadioButton rdoElectronic;
     private javax.swing.JRadioButton rdoRock;
     private javax.swing.JTextField txtArtist;
+    private javax.swing.JTextField txtSearch;
     private javax.swing.JTextField txtSongName;
     // End of variables declaration//GEN-END:variables
 }
