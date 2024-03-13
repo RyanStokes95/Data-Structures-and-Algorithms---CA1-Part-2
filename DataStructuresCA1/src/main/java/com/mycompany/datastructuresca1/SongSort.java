@@ -58,6 +58,12 @@ public class SongSort{
         return genreA.contains(song);
     }
     
+    public String countA(){
+        
+        return Integer.toString(genreA.size());
+        
+    }
+    
     public void addGenreB(){
         
         genreB.add( songs.peek());
@@ -74,5 +80,11 @@ public class SongSort{
     public boolean containsB(String song){
         
         return genreB.contains(song);
+    }
+    
+    public String countB(){
+        
+        return Integer.toString(genreB.size());
+        
     }
 }
