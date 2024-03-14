@@ -118,6 +118,7 @@ public class MusicManagerApp extends javax.swing.JFrame {
         });
 
         btnDelete.setText("Delete");
+        btnDelete.setEnabled(false);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -135,67 +136,84 @@ public class MusicManagerApp extends javax.swing.JFrame {
 
         lblCurrentSong.setText("None");
 
-        btnMoveUp.setText("Move Up");
+        btnMoveUp.setText("Move Down");
+        btnMoveUp.setEnabled(false);
+        btnMoveUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoveUpActionPerformed(evt);
+            }
+        });
 
-        btnMoveDown.setText("Move Down");
+        btnMoveDown.setText("Move Up");
+        btnMoveDown.setEnabled(false);
+        btnMoveDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoveDownActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(444, 444, 444)
-                .addComponent(lblGenreList)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblSongName)
-                                    .addComponent(lblLikedSongs)
-                                    .addComponent(lblArtist)
-                                    .addComponent(lblSearch)
-                                    .addComponent(lblGenrePlaylist))
-                                .addGap(93, 93, 93)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
-                                        .addComponent(jScrollPane1)
-                                        .addComponent(txtSongName)
-                                        .addComponent(txtArtist))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
-                                        .addGap(44, 44, 44)
-                                        .addComponent(btnMoveUp)
-                                        .addGap(38, 38, 38)
-                                        .addComponent(btnMoveDown))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblCurrent)
-                                .addGap(307, 307, 307)
-                                .addComponent(lblCurrentSong)))
-                        .addGap(40, 40, 40)
+                            .addComponent(lblSongName)
+                            .addComponent(lblLikedSongs)
+                            .addComponent(lblArtist)
+                            .addComponent(lblSearch)
+                            .addComponent(lblGenrePlaylist))
+                        .addGap(93, 93, 93)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnRepeat)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
+                                .addComponent(jScrollPane1)
+                                .addComponent(txtSongName)
+                                .addComponent(txtArtist))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnSearch)
-                                .addGap(20, 20, 20)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(btnAddGenre)
-                                        .addComponent(rdoElectronic, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btnGenreChange)
-                                        .addComponent(btnDelete))
-                                    .addComponent(rdoRock)
-                                    .addComponent(btnAddSong)))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(294, 294, 294)
+                                        .addComponent(lblCurrentSong)
+                                        .addGap(27, 27, 27))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(lblSongCount))
+                                            .addComponent(txtSearch))
+                                        .addGap(63, 63, 63)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtSongCount, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnSearch)
+                                        .addGap(59, 59, 59)
+                                        .addComponent(btnMoveDown))))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(360, 360, 360)
-                        .addComponent(lblSongCount)
-                        .addGap(41, 41, 41)
-                        .addComponent(txtSongCount, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblCurrent)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnRepeat)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnMoveUp)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnAddGenre)
+                                .addComponent(rdoElectronic, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnGenreChange)
+                                .addComponent(btnDelete, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(rdoRock)
+                            .addComponent(btnAddSong))))
                 .addGap(45, 45, 45))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblGenreList)
+                .addGap(502, 502, 502))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,7 +224,7 @@ public class MusicManagerApp extends javax.swing.JFrame {
                         .addComponent(rdoRock)
                         .addGap(18, 18, 18)
                         .addComponent(rdoElectronic)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                         .addComponent(btnAddGenre))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(35, 35, 35)
@@ -230,23 +248,26 @@ public class MusicManagerApp extends javax.swing.JFrame {
                     .addComponent(btnGenreChange)
                     .addComponent(lblGenrePlaylist))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSongCount)
-                    .addComponent(txtSongCount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSearch)
-                    .addComponent(btnDelete)
-                    .addComponent(btnSearch)
-                    .addComponent(btnMoveUp)
-                    .addComponent(btnMoveDown))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRepeat)
-                    .addComponent(lblCurrent)
-                    .addComponent(lblCurrentSong))
-                .addGap(24, 24, 24))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblSongCount)
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblSearch)
+                            .addComponent(btnDelete)
+                            .addComponent(btnMoveUp)
+                            .addComponent(btnMoveDown)
+                            .addComponent(btnSearch))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnRepeat)
+                            .addComponent(lblCurrent)
+                            .addComponent(lblCurrentSong))
+                        .addGap(24, 24, 24))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtSongCount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -325,7 +346,9 @@ public class MusicManagerApp extends javax.swing.JFrame {
             if(ls.containsA(txtSearch.getText())){
             
                 JOptionPane.showMessageDialog(null, "This song is in the Rock playlist");
-            
+                btnMoveUp.setEnabled(true);
+                btnMoveDown.setEnabled(true);
+                btnDelete.setEnabled(true);
         }
             else{
                 
@@ -339,6 +362,9 @@ public class MusicManagerApp extends javax.swing.JFrame {
             if(ls.containsB(txtSearch.getText())){
             
                 JOptionPane.showMessageDialog(null, "This song is in the Electronic playlist");
+                btnMoveUp.setEnabled(true);
+                btnMoveDown.setEnabled(true);
+                btnDelete.setEnabled(true);
             
         }
             else{
@@ -388,6 +414,30 @@ public class MusicManagerApp extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnMoveDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveDownActionPerformed
+        
+        ls.moveUpA(txtSearch.getText());
+        lmRock.clear();
+            for(int i = 0; i < ls.sizeA(); i++){
+
+                lmRock.add(0, ls.iterateA(i));
+                System.out.println(i);
+            }
+        lstGenre.setModel(lmRock);
+    }//GEN-LAST:event_btnMoveDownActionPerformed
+
+    private void btnMoveUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveUpActionPerformed
+        
+        ls.moveDownA(txtSearch.getText());
+        lmRock.clear();
+            for(int i = 0; i < ls.sizeA(); i++){
+
+                lmRock.add(0, ls.iterateA(i));
+                System.out.println(i);
+            }
+        lstGenre.setModel(lmRock);   
+    }//GEN-LAST:event_btnMoveUpActionPerformed
 
     /**
      * @param args the command line arguments

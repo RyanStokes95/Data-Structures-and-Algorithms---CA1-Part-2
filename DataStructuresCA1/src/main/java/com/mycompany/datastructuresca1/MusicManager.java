@@ -7,6 +7,7 @@ package com.mycompany.datastructuresca1;
  */
 
 import java.util.*;
+import javax.swing.JOptionPane;
 
 public class MusicManager{
     
@@ -72,7 +73,7 @@ public class MusicManager{
     
     public int sizeA(){
         
-        return genreB.size();
+        return genreA.size();
         
     }
     
@@ -80,6 +81,36 @@ public class MusicManager{
         
         return genreA.get(i);
         
+    }
+    
+    public void moveDownA(String song) {
+        int index = genreA.indexOf(song);
+        if (index >= 0 && index > 0){
+            
+            genreA.add(index - 1, song);
+            genreA.remove(index + 1);
+            
+        } 
+        else {
+            
+        JOptionPane.showMessageDialog(null, "Song is at Bottom");
+        
+        }
+    }
+    
+    public void moveUpA(String song) {
+        int index = genreA.indexOf(song);
+        if (index >= 0 && index < genreA.size() - 1) { // Check if the song exists and is not already at the bottom
+            
+            genreA.add(index + 2, song); // Move the song down by adding it after the next element
+            genreA.remove(index); // Remove the duplicate song from its original position after moving it
+        
+        } 
+        else {
+            
+            JOptionPane.showMessageDialog(null, "Song is at Top");
+        
+        }
     }
     
     public void addGenreB(){
@@ -122,5 +153,35 @@ public class MusicManager{
         
         return genreB.get(i);
         
+    }
+    
+    public void moveDownB(String song) {
+        int index = genreB.indexOf(song);
+        if (index >= 0 && index > 0){
+            
+            genreB.add(index - 1, song);
+            genreB.remove(index + 1);
+            
+        } 
+        else {
+            
+        JOptionPane.showMessageDialog(null, "Song is at Bottom");
+        
+        }
+    }
+    
+    public void moveUpB(String song) {
+        int index = genreB.indexOf(song);
+        if (index >= 0 && index < genreB.size() - 1) { // Check if the song exists and is not already at the bottom
+            
+            genreB.add(index + 2, song); // Move the song down by adding it after the next element
+            genreB.remove(index); // Remove the duplicate song from its original position after moving it
+        
+        } 
+        else {
+            
+            JOptionPane.showMessageDialog(null, "Song is at Top");
+        
+        }
     }
 }
