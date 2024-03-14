@@ -2,8 +2,6 @@ package com.mycompany.datastructuresca1;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
@@ -24,6 +22,8 @@ public class MusicManagerApp extends javax.swing.JFrame {
     DefaultListModel lmLikedSongs = new DefaultListModel();
     DefaultListModel lmRock = new DefaultListModel();
     DefaultListModel lmElectronic = new DefaultListModel();
+    
+    //For use in putting a playlist on repeat
     Timer timer;
     int currentIndex = 1;
     
@@ -68,6 +68,7 @@ public class MusicManagerApp extends javax.swing.JFrame {
         btnStop = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 153, 153));
 
         txtSongName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,13 +77,17 @@ public class MusicManagerApp extends javax.swing.JFrame {
         });
 
         buttonGroupGenre.add(rdoRock);
+        rdoRock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         rdoRock.setText("Rock");
 
         buttonGroupGenre.add(rdoElectronic);
+        rdoElectronic.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         rdoElectronic.setText("Electronic");
 
+        lblSongName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblSongName.setText("Song Name:");
 
+        btnAddSong.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
         btnAddSong.setText("Add Song");
         btnAddSong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +95,7 @@ public class MusicManagerApp extends javax.swing.JFrame {
             }
         });
 
+        btnAddGenre.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
         btnAddGenre.setText("Add Genre");
         btnAddGenre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,14 +105,19 @@ public class MusicManagerApp extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(lstLikedSongs);
 
+        lblLikedSongs.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblLikedSongs.setText("Liked Songs:");
 
         jScrollPane3.setViewportView(lstGenre);
 
+        lblGenreList.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblGenreList.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblGenreList.setText("Rock");
 
+        lblArtist.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblArtist.setText("Artist");
 
+        btnGenreChange.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
         btnGenreChange.setText("Next Genre");
         btnGenreChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,10 +125,13 @@ public class MusicManagerApp extends javax.swing.JFrame {
             }
         });
 
+        lblSearch.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblSearch.setText("Search Playlist");
 
+        lblGenrePlaylist.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblGenrePlaylist.setText("Genre Playlists");
 
+        btnSearch.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,6 +139,7 @@ public class MusicManagerApp extends javax.swing.JFrame {
             }
         });
 
+        btnDelete.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.setEnabled(false);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -133,11 +148,13 @@ public class MusicManagerApp extends javax.swing.JFrame {
             }
         });
 
+        lblSongCount.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblSongCount.setText("Song Count:");
 
         txtSongCount.setEditable(false);
         txtSongCount.setText("0");
 
+        btnRepeat.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
         btnRepeat.setText("Repeat Playlist");
         btnRepeat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,11 +162,14 @@ public class MusicManagerApp extends javax.swing.JFrame {
             }
         });
 
+        lblCurrent.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblCurrent.setText("Currently Playing:");
 
+        lblCurrentSong.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblCurrentSong.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCurrentSong.setText("None");
 
+        btnMoveUp.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
         btnMoveUp.setText("Move Down");
         btnMoveUp.setEnabled(false);
         btnMoveUp.addActionListener(new java.awt.event.ActionListener() {
@@ -158,6 +178,7 @@ public class MusicManagerApp extends javax.swing.JFrame {
             }
         });
 
+        btnMoveDown.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
         btnMoveDown.setText("Move Up");
         btnMoveDown.setEnabled(false);
         btnMoveDown.addActionListener(new java.awt.event.ActionListener() {
@@ -166,6 +187,7 @@ public class MusicManagerApp extends javax.swing.JFrame {
             }
         });
 
+        btnStop.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
         btnStop.setText("Stop");
         btnStop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,14 +202,15 @@ public class MusicManagerApp extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSongName)
+                    .addComponent(lblLikedSongs)
+                    .addComponent(lblArtist)
+                    .addComponent(lblSearch)
+                    .addComponent(lblGenrePlaylist)
+                    .addComponent(lblCurrent))
+                .addGap(69, 69, 69)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblSongName)
-                            .addComponent(lblLikedSongs)
-                            .addComponent(lblArtist)
-                            .addComponent(lblSearch)
-                            .addComponent(lblGenrePlaylist))
-                        .addGap(93, 93, 93)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
@@ -195,11 +218,12 @@ public class MusicManagerApp extends javax.swing.JFrame {
                                 .addComponent(txtSongName)
                                 .addComponent(txtArtist))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtSearch)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(lblSongCount))
-                                    .addComponent(txtSearch))
+                                        .addComponent(lblSongCount)
+                                        .addGap(36, 36, 36)))
                                 .addGap(63, 63, 63)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtSongCount, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,26 +235,23 @@ public class MusicManagerApp extends javax.swing.JFrame {
                         .addComponent(btnMoveUp)
                         .addGap(18, 18, 18))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblCurrent)
-                        .addGap(173, 173, 173)
-                        .addComponent(lblCurrentSong, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                        .addComponent(lblCurrentSong, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                         .addComponent(btnRepeat)
                         .addGap(27, 27, 27)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnAddGenre)
-                        .addComponent(rdoElectronic, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnGenreChange)
-                        .addComponent(btnDelete, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(rdoElectronic)
+                    .addComponent(btnGenreChange, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAddGenre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(rdoRock)
-                    .addComponent(btnAddSong)
-                    .addComponent(btnStop))
+                    .addComponent(btnAddSong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(45, 45, 45))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblGenreList)
-                .addGap(502, 502, 502))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(447, 447, 447)
+                .addComponent(lblGenreList, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,9 +260,9 @@ public class MusicManagerApp extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(159, 159, 159)
                         .addComponent(rdoRock)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                         .addComponent(rdoElectronic)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(btnAddGenre))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(35, 35, 35)
@@ -253,7 +274,7 @@ public class MusicManagerApp extends javax.swing.JFrame {
                             .addComponent(txtSongName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblSongName)
                             .addComponent(btnAddSong))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblLikedSongs))))
@@ -276,7 +297,7 @@ public class MusicManagerApp extends javax.swing.JFrame {
                             .addComponent(btnMoveUp)
                             .addComponent(btnMoveDown)
                             .addComponent(btnSearch))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnRepeat)
                             .addComponent(lblCurrent)
@@ -333,9 +354,11 @@ public class MusicManagerApp extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSongNameActionPerformed
 
     private void btnAddSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSongActionPerformed
+        //Button which concatenates artist and song and inserts it into the liked songs stack and list model
         ls.addLikedSong(txtSongName.getText(), txtArtist.getText());
         lmLikedSongs.add(0, ls.sortLikedSongs());
         lstLikedSongs.setModel(lmLikedSongs);
+        //Resets text field for ease of following inputs
         txtSongName.setText(null);
         txtArtist.setText(null);
     }//GEN-LAST:event_btnAddSongActionPerformed
@@ -361,11 +384,14 @@ public class MusicManagerApp extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGenreChangeActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        //Button which searches the linked lists to see if a song is present
         if(lblGenreList.getText() == "Rock"){
             
             if(ls.containsA(txtSearch.getText())){
             
                 JOptionPane.showMessageDialog(null, "This song is in the Rock playlist");
+                
+                //Move and Delete buttons only become available after the song has bee found in the list
                 btnMoveUp.setEnabled(true);
                 btnMoveDown.setEnabled(true);
                 btnDelete.setEnabled(true);
@@ -382,6 +408,8 @@ public class MusicManagerApp extends javax.swing.JFrame {
             if(ls.containsB(txtSearch.getText())){
             
                 JOptionPane.showMessageDialog(null, "This song is in the Electronic playlist");
+                
+                //Move and Delete buttons only become available after the song has bee found in the list
                 btnMoveUp.setEnabled(true);
                 btnMoveDown.setEnabled(true);
                 btnDelete.setEnabled(true);
@@ -397,18 +425,22 @@ public class MusicManagerApp extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        
+        //Button for deleting elements from the linked list and updating the listmodels
         if(ls.containsA(txtSearch.getText()) || ls.containsB(txtSearch.getText())){
             if(lblGenreList.getText() == "Rock"){
 
             ls.deleteA(txtSearch.getText());
             lmRock.clear();
+            
+            //Inserts linked list elements back into the listmodel
             for(int i = 0; i < ls.sizeA(); i++){
 
                 lmRock.add(0, ls.iterateA(i));
 
             }
             lstGenre.setModel(lmRock);
+            
+            //Used for updating the song count upon song deletion
             txtSongCount.setText("0");
             txtSongCount.setText(ls.countA());
 
@@ -417,12 +449,16 @@ public class MusicManagerApp extends javax.swing.JFrame {
 
             ls.deleteB(txtSearch.getText());
             lmElectronic.clear();
+            
+            //Inserts linked list elements back into the listmodel
             for(int i = 0; i < ls.sizeB(); i++){
 
                 lmElectronic.add(0, ls.iterateB(i));
 
             }
             lstGenre.setModel(lmElectronic);
+            
+            //Used for updating the song count upon song deletion
             txtSongCount.setText("0");
             txtSongCount.setText(ls.countB());
 
@@ -430,47 +466,87 @@ public class MusicManagerApp extends javax.swing.JFrame {
         }
         else{
             
+            //Error message
             JOptionPane.showMessageDialog(null, "This song is not in the selected playlist");
             
         }
+        
+        btnMoveUp.setEnabled(false);
+        btnMoveDown.setEnabled(false);
+        btnDelete.setEnabled(false);
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnMoveDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveDownActionPerformed
+        
+        //Button which uses the moveDown methods and updates the listmodels depending on genre selected
+        if(lblGenreList.getText() == "Rock"){
+            ls.moveUpA(txtSearch.getText());
+            lmRock.clear();
+            for(int i = 0; i < ls.sizeA(); i++){
 
-        ls.moveUpA(txtSearch.getText());
-        lmRock.clear();
-        for(int i = 0; i < ls.sizeA(); i++){
+                lmRock.add(0, ls.iterateA(i));
 
-            lmRock.add(0, ls.iterateA(i));
-            System.out.println(i);
+            }
+            lstGenre.setModel(lmRock);
         }
-        lstGenre.setModel(lmRock);
+        else{
+            
+            ls.moveUpB(txtSearch.getText());
+            lmElectronic.clear();
+            for(int i = 0; i < ls.sizeB(); i++){
+
+                lmElectronic.add(0, ls.iterateB(i));
+                
+            }
+            lstGenre.setModel(lmElectronic);
+            
+        }
     }//GEN-LAST:event_btnMoveDownActionPerformed
 
     private void btnMoveUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveUpActionPerformed
 
-        ls.moveDownA(txtSearch.getText());
-        lmRock.clear();
-        for(int i = 0; i < ls.sizeA(); i++){
+        //Button which uses the moveUp methods and updates the listmodels depending on genre selected
+        if(lblGenreList.getText() == "Rock"){
+            ls.moveDownA(txtSearch.getText());
+            lmRock.clear();
+            for(int i = 0; i < ls.sizeA(); i++){
 
-            lmRock.add(0, ls.iterateA(i));
-            System.out.println(i);
+                lmRock.add(0, ls.iterateA(i));
+                
+            }
+            lstGenre.setModel(lmRock);
         }
-        lstGenre.setModel(lmRock);
+        else{
+            
+            ls.moveDownB(txtSearch.getText());
+            lmElectronic.clear();
+            for(int i = 0; i < ls.sizeB(); i++){
+
+                lmElectronic.add(0, ls.iterateB(i));
+                
+            }
+            lstGenre.setModel(lmElectronic);
+            
+        }
     }//GEN-LAST:event_btnMoveUpActionPerformed
 
     private void btnRepeatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRepeatActionPerformed
         
         if(lblGenreList.getText() == "Rock"){
+            
+            //Initial setting of the first song before activation of timer, timer starts at index 1.
             lblCurrentSong.setText(ls.iterateA(0));
 
+            //Timer which changes the song which is on repeat until the linked list has been iterated
             timer = new Timer(10000, new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
+                    //Will run while the currentIndex is less than the list size
                     if (currentIndex < ls.sizeA()) {
                         lblCurrentSong.setText(ls.iterateA(currentIndex++));
                     } else {
-                        timer.stop(); // Stop the timer when all items have been displayed
+                        //Occurs when list has been iterated
+                        timer.stop();
                         lblCurrentSong.setText("Finished displaying all items.");
                     }
                 }
@@ -479,6 +555,7 @@ public class MusicManagerApp extends javax.swing.JFrame {
         }
         else{
             
+            //Same operations as above for the Electronic genre playlist
             lblCurrentSong.setText(ls.iterateB(0));
 
             timer = new Timer(10000, new ActionListener() {
@@ -498,7 +575,8 @@ public class MusicManagerApp extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRepeatActionPerformed
 
     private void btnStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStopActionPerformed
-        // TODO add your handling code here:
+        timer.stop();
+        lblCurrentSong.setText("None");
     }//GEN-LAST:event_btnStopActionPerformed
 
     /**
