@@ -8,14 +8,14 @@ import javax.swing.JOptionPane;
  * PlayListGUI.java
  * @author Ryan Stokes
  */
-public class PlaylistGUI extends javax.swing.JFrame {
+public class MusicManagerApp extends javax.swing.JFrame {
 
-    public PlaylistGUI() {
+    public MusicManagerApp() {
         initComponents();
     }
     
     //Data Memebers
-    SongSort ls = new SongSort();
+    MusicManager ls = new MusicManager();
     DefaultListModel lmLikedSongs = new DefaultListModel();
     DefaultListModel lmRock = new DefaultListModel();
     DefaultListModel lmElectronic = new DefaultListModel();
@@ -406,20 +406,21 @@ public class PlaylistGUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PlaylistGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MusicManagerApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PlaylistGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MusicManagerApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PlaylistGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MusicManagerApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PlaylistGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MusicManagerApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PlaylistGUI().setVisible(true);
+                new MusicManagerApp().setVisible(true);
             }
         });
     }

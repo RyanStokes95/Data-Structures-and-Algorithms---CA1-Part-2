@@ -8,7 +8,7 @@ package com.mycompany.datastructuresca1;
 
 import java.util.*;
 
-public class SongSort{
+public class MusicManager{
     
     private final Stack<String> songs;
     private final String song;
@@ -17,7 +17,7 @@ public class SongSort{
     private final LinkedList<String> genreA;
     private final LinkedList<String> genreB;
     
-    public SongSort(){
+    public MusicManager(){
         
         songs = new Stack<>();
         artist = "";
