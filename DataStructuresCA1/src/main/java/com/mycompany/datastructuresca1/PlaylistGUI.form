@@ -37,32 +37,54 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblSongName" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblLikedSongs" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblArtist" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblSearch" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblGenrePlaylist" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtSearch" max="32767" attributes="0"/>
-                          <Component id="jScrollPane3" pref="519" max="32767" attributes="0"/>
-                          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtSongName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtArtist" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                      <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="btnAddGenre" min="-2" max="-2" attributes="0"/>
-                              <Component id="rdoElectronic" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton1" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnDelete" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblSongName" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblLikedSongs" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblArtist" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblSearch" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblGenrePlaylist" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jScrollPane3" pref="519" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtSongName" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtArtist" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="txtSearch" pref="303" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                      <Component id="btnMoveUp" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="btnMoveDown" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <Component id="rdoRock" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnAddSong" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="lblCurrent" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="307" max="-2" attributes="0"/>
+                              <Component id="lblCurrentSong" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="btnRepeat" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="btnAddGenre" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rdoElectronic" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnGenreChange" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnDelete" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="rdoRock" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAddSong" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -72,7 +94,7 @@
                       <Component id="txtSongCount" min="-2" pref="71" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="49" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -112,7 +134,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane3" min="-2" pref="110" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnGenreChange" min="-2" max="-2" attributes="0"/>
                   <Component id="lblGenrePlaylist" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -126,8 +148,16 @@
                   <Component id="lblSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnMoveUp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnMoveDown" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="89" max="32767" attributes="0"/>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnRepeat" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCurrent" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCurrentSong" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -230,12 +260,12 @@
         <Property name="text" type="java.lang.String" value="Artist"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnGenreChange">
       <Properties>
         <Property name="text" type="java.lang.String" value="Next Genre"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGenreChangeActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSearch">
@@ -262,6 +292,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblSongCount">
       <Properties>
@@ -272,6 +305,31 @@
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnRepeat">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Repeat Playlist"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCurrent">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Currently Playing:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCurrentSong">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="None"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnMoveUp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Move Up"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnMoveDown">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Move Down"/>
       </Properties>
     </Component>
   </SubComponents>

@@ -64,6 +64,24 @@ public class SongSort{
         
     }
     
+    public void deleteA(String song){
+        
+        genreA.remove(genreA.indexOf(song));
+        
+    }
+    
+    public int sizeA(){
+        
+        return genreB.size();
+        
+    }
+    
+    public String iterateA(int i){
+        
+        return genreA.get(i);
+        
+    }
+    
     public void addGenreB(){
         
         genreB.add( songs.peek());
@@ -85,6 +103,24 @@ public class SongSort{
     public String countB(){
         
         return Integer.toString(genreB.size());
+        
+    }
+    
+    public void deleteB(String song){
+        
+        genreB.remove(genreB.indexOf(song));
+        
+    }
+    
+    public int sizeB(){
+        
+        return genreB.size();
+        
+    }
+    
+    public String iterateB(int i){
+        
+        return genreB.get(i);
         
     }
 }

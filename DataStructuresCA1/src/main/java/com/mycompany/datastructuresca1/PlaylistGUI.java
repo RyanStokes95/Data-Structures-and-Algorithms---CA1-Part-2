@@ -45,7 +45,7 @@ public class PlaylistGUI extends javax.swing.JFrame {
         lblGenreList = new javax.swing.JLabel();
         txtArtist = new javax.swing.JTextField();
         lblArtist = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnGenreChange = new javax.swing.JButton();
         txtSearch = new javax.swing.JTextField();
         lblSearch = new javax.swing.JLabel();
         lblGenrePlaylist = new javax.swing.JLabel();
@@ -53,6 +53,11 @@ public class PlaylistGUI extends javax.swing.JFrame {
         btnDelete = new javax.swing.JButton();
         lblSongCount = new javax.swing.JLabel();
         txtSongCount = new javax.swing.JTextField();
+        btnRepeat = new javax.swing.JButton();
+        lblCurrent = new javax.swing.JLabel();
+        lblCurrentSong = new javax.swing.JLabel();
+        btnMoveUp = new javax.swing.JButton();
+        btnMoveDown = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,10 +99,10 @@ public class PlaylistGUI extends javax.swing.JFrame {
 
         lblArtist.setText("Artist");
 
-        jButton1.setText("Next Genre");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnGenreChange.setText("Next Genre");
+        btnGenreChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnGenreChangeActionPerformed(evt);
             }
         });
 
@@ -113,11 +118,26 @@ public class PlaylistGUI extends javax.swing.JFrame {
         });
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         lblSongCount.setText("Song Count:");
 
         txtSongCount.setEditable(false);
         txtSongCount.setText("0");
+
+        btnRepeat.setText("Repeat Playlist");
+
+        lblCurrent.setText("Currently Playing:");
+
+        lblCurrentSong.setText("None");
+
+        btnMoveUp.setText("Move Up");
+
+        btnMoveDown.setText("Move Down");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,35 +152,50 @@ public class PlaylistGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblSongName)
-                            .addComponent(lblLikedSongs)
-                            .addComponent(lblArtist)
-                            .addComponent(lblSearch)
-                            .addComponent(lblGenrePlaylist))
-                        .addGap(93, 93, 93)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtSearch)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1)
-                            .addComponent(txtSongName)
-                            .addComponent(txtArtist))
-                        .addGap(65, 65, 65)
-                        .addComponent(btnSearch)
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(btnAddGenre)
-                                .addComponent(rdoElectronic, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButton1)
-                                .addComponent(btnDelete))
-                            .addComponent(rdoRock)
-                            .addComponent(btnAddSong)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblSongName)
+                                    .addComponent(lblLikedSongs)
+                                    .addComponent(lblArtist)
+                                    .addComponent(lblSearch)
+                                    .addComponent(lblGenrePlaylist))
+                                .addGap(93, 93, 93)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
+                                        .addComponent(jScrollPane1)
+                                        .addComponent(txtSongName)
+                                        .addComponent(txtArtist))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
+                                        .addGap(44, 44, 44)
+                                        .addComponent(btnMoveUp)
+                                        .addGap(38, 38, 38)
+                                        .addComponent(btnMoveDown))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblCurrent)
+                                .addGap(307, 307, 307)
+                                .addComponent(lblCurrentSong)))
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnRepeat)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnSearch)
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnAddGenre)
+                                        .addComponent(rdoElectronic, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(btnGenreChange)
+                                        .addComponent(btnDelete))
+                                    .addComponent(rdoRock)
+                                    .addComponent(btnAddSong)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(360, 360, 360)
                         .addComponent(lblSongCount)
                         .addGap(41, 41, 41)
                         .addComponent(txtSongCount, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGap(45, 45, 45))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +227,7 @@ public class PlaylistGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
+                    .addComponent(btnGenreChange)
                     .addComponent(lblGenrePlaylist))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -203,8 +238,15 @@ public class PlaylistGUI extends javax.swing.JFrame {
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSearch)
                     .addComponent(btnDelete)
-                    .addComponent(btnSearch))
-                .addContainerGap(89, Short.MAX_VALUE))
+                    .addComponent(btnSearch)
+                    .addComponent(btnMoveUp)
+                    .addComponent(btnMoveDown))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRepeat)
+                    .addComponent(lblCurrent)
+                    .addComponent(lblCurrentSong))
+                .addGap(24, 24, 24))
         );
 
         pack();
@@ -257,7 +299,7 @@ public class PlaylistGUI extends javax.swing.JFrame {
         lstLikedSongs.setModel(lmLikedSongs);
     }//GEN-LAST:event_btnAddSongActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnGenreChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenreChangeActionPerformed
         //Depending on which playlist is selected to be visible the list model is updated
         if(lblGenreList.getText() == "Rock"){
             
@@ -275,7 +317,7 @@ public class PlaylistGUI extends javax.swing.JFrame {
             txtSongCount.setText(ls.countA());
             
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnGenreChangeActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         if(lblGenreList.getText() == "Rock"){
@@ -307,6 +349,45 @@ public class PlaylistGUI extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        
+        if(ls.containsA(txtSearch.getText()) || ls.containsB(txtSearch.getText())){
+            if(lblGenreList.getText() == "Rock"){
+
+            ls.deleteA(txtSearch.getText());
+            lmRock.clear();
+            for(int i = 0; i < ls.sizeA(); i++){
+
+                lmRock.add(0, ls.iterateA(i));
+
+            }
+            lstGenre.setModel(lmRock);
+            txtSongCount.setText("0");
+            txtSongCount.setText(ls.countA());
+
+            }
+            else{
+
+            ls.deleteB(txtSearch.getText());
+            lmElectronic.clear();
+            for(int i = 0; i < ls.sizeB(); i++){
+
+                lmElectronic.add(0, ls.iterateB(i));
+
+            }
+            lstGenre.setModel(lmElectronic);
+            txtSongCount.setText("0");
+            txtSongCount.setText(ls.countB());
+
+            }
+        }
+        else{
+            
+            JOptionPane.showMessageDialog(null, "This song is not in the selected playlist");
+            
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -347,12 +428,17 @@ public class PlaylistGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnAddGenre;
     private javax.swing.JButton btnAddSong;
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnGenreChange;
+    private javax.swing.JButton btnMoveDown;
+    private javax.swing.JButton btnMoveUp;
+    private javax.swing.JButton btnRepeat;
     private javax.swing.JButton btnSearch;
     private javax.swing.ButtonGroup buttonGroupGenre;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblArtist;
+    private javax.swing.JLabel lblCurrent;
+    private javax.swing.JLabel lblCurrentSong;
     private javax.swing.JLabel lblGenreList;
     private javax.swing.JLabel lblGenrePlaylist;
     private javax.swing.JLabel lblLikedSongs;
